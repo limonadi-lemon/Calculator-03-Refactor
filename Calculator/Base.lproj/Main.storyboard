@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6KS-RR-rNR">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WWI-JQ-6fM" userLabel="verStackDisplay">
+                                <rect key="frame" x="0.0" y="-14" width="375" height="259"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8T-kg-QOo" userLabel="lblFormula">
+                                        <rect key="frame" x="4" y="0.0" width="367" height="155.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFt-wf-k1f" userLabel="lblResult">
+                                        <rect key="frame" x="4" y="155.5" width="367" height="103.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="VFt-wf-k1f" firstAttribute="height" secondItem="WWI-JQ-6fM" secondAttribute="height" multiplier="0.4" id="2Y7-gO-lsr"/>
+                                    <constraint firstItem="VFt-wf-k1f" firstAttribute="top" secondItem="V8T-kg-QOo" secondAttribute="bottom" id="Moi-48-E1h"/>
+                                    <constraint firstItem="V8T-kg-QOo" firstAttribute="width" secondItem="WWI-JQ-6fM" secondAttribute="width" constant="-8" id="a6D-rK-LDI"/>
+                                    <constraint firstAttribute="bottom" secondItem="VFt-wf-k1f" secondAttribute="bottom" id="aoH-7W-1wJ"/>
+                                    <constraint firstItem="VFt-wf-k1f" firstAttribute="width" secondItem="WWI-JQ-6fM" secondAttribute="width" constant="-8" id="eXx-PE-8Gu"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Aew-iC-WoJ" userLabel="verStackKeys">
+                                <rect key="frame" x="4" y="255" width="367" height="388"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Fiv-Vg-Qh8" userLabel="horStack1stRow">
+                                        <rect key="frame" x="0.0" y="0.0" width="367" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKk-D2-ING" userLabel="btnAllClear">
+                                                <rect key="frame" x="0.0" y="0.0" width="89" height="74"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="AC">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="clickBtnAllClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMC-An-yC7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-Pg-onm" userLabel="btnLeftParenthesis">
+                                                <rect key="frame" x="93" y="0.0" width="88.5" height="74"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="(">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEM-07-uGX" userLabel="btnRightParenthesis">
+                                                <rect key="frame" x="185.5" y="0.0" width="89" height="74"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content=")">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEd-Nk-hys" userLabel="btnDeleteLast">
+                                                <rect key="frame" x="278.5" y="0.0" width="88.5" height="74"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="DEL">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="clickBtnDeleteLast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8e-4A-V7C"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vi2-pb-FmE" userLabel="horStack2ndRow">
+                                        <rect key="frame" x="0.0" y="78" width="367" height="74.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYr-YH-am3" userLabel="btn1">
+                                                <rect key="frame" x="0.0" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="1">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ln-z0-ewx" userLabel="btn2">
+                                                <rect key="frame" x="93" y="0.0" width="88.5" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="2">
+                                                            <attributes>
+                                                                <font key="NSFont" size="23" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-jb-SMe" userLabel="btn3">
+                                                <rect key="frame" x="185.5" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="3">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfS-T3-ejh" userLabel="btnPlus">
+                                                <rect key="frame" x="278.5" y="0.0" width="88.5" height="74.5"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="+">
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="24" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6ut-pV-ieO" userLabel="horStack3rdRow">
+                                        <rect key="frame" x="0.0" y="156.5" width="367" height="74.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBv-Gm-5w8" userLabel="btn4">
+                                                <rect key="frame" x="0.0" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="4">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvr-jO-aQ9" userLabel="btn5">
+                                                <rect key="frame" x="93" y="0.0" width="88.5" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="5">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xs-uR-lyM" userLabel="btn6">
+                                                <rect key="frame" x="185.5" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="6">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs1-q3-siP" userLabel="btnMinus">
+                                                <rect key="frame" x="278.5" y="0.0" width="88.5" height="74.5"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="-">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="24" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yb1-u7-xai" userLabel="horStack4thRow">
+                                        <rect key="frame" x="0.0" y="235" width="367" height="74.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axF-Wh-07f" userLabel="btn7">
+                                                <rect key="frame" x="0.0" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="7">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbQ-4l-CTX" userLabel="btn8">
+                                                <rect key="frame" x="93" y="0.0" width="88.5" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="8">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNd-g1-X0S" userLabel="btn9">
+                                                <rect key="frame" x="185.5" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="9">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkl-Db-twi" userLabel="btnMultiply">
+                                                <rect key="frame" x="278.5" y="0.0" width="88.5" height="74.5"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="*">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wGX-Wf-zm6" userLabel="horStack5thRow">
+                                        <rect key="frame" x="0.0" y="313.5" width="367" height="74.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHX-EJ-q26" userLabel="btnDash">
+                                                <rect key="frame" x="0.0" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content=".">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQ6-L0-L91" userLabel="btn0">
+                                                <rect key="frame" x="93" y="0.0" width="88.5" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="0">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQc-Dh-7nh" userLabel="btnEqual">
+                                                <rect key="frame" x="185.5" y="0.0" width="89" height="74.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="=">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="clickBtnEqual:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMa-TE-WB3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5i-ka-KsS" userLabel="btnDivide">
+                                                <rect key="frame" x="278.5" y="0.0" width="88.5" height="74.5"/>
+                                                <color key="tintColor" red="0.68649323453608246" green="0.54482903853788556" blue="0.53941071735164603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="/">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Fiv-Vg-Qh8" firstAttribute="width" secondItem="Aew-iC-WoJ" secondAttribute="width" id="6BS-Mc-W7M"/>
+                                    <constraint firstItem="Vi2-pb-FmE" firstAttribute="width" secondItem="Aew-iC-WoJ" secondAttribute="width" id="Cue-uv-ifK"/>
+                                    <constraint firstItem="wGX-Wf-zm6" firstAttribute="width" secondItem="Aew-iC-WoJ" secondAttribute="width" id="DH2-jV-pDG"/>
+                                    <constraint firstItem="6ut-pV-ieO" firstAttribute="width" secondItem="Aew-iC-WoJ" secondAttribute="width" id="Fkk-9q-tfg"/>
+                                    <constraint firstItem="yb1-u7-xai" firstAttribute="width" secondItem="Aew-iC-WoJ" secondAttribute="width" id="s2d-hO-sBD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Aew-iC-WoJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-4" id="66Z-4c-hy9"/>
+                            <constraint firstItem="Aew-iC-WoJ" firstAttribute="top" secondItem="WWI-JQ-6fM" secondAttribute="bottom" constant="10" id="AF9-5t-GZH"/>
+                            <constraint firstItem="WWI-JQ-6fM" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="BJg-5x-e1R"/>
+                            <constraint firstItem="WWI-JQ-6fM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Dc2-Px-TOd"/>
+                            <constraint firstItem="Aew-iC-WoJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F9h-AX-KIb"/>
+                            <constraint firstItem="Aew-iC-WoJ" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" constant="-8" id="Ryd-ex-XSo"/>
+                            <constraint firstItem="WWI-JQ-6fM" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="ZQ3-AR-CTJ"/>
+                            <constraint firstItem="Aew-iC-WoJ" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.6" id="bap-yn-Nho"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9hA-MX-mnd"/>
+                    <connections>
+                        <outlet property="lblFormula" destination="V8T-kg-QOo" id="pib-dC-KqI"/>
+                        <outlet property="lblResult" destination="VFt-wf-k1f" id="7eH-i5-ci8"/>
+                        <outletCollection property="formulaBtns" destination="pQ6-L0-L91" collectionClass="NSMutableArray" id="Y2W-Ge-ghS"/>
+                        <outletCollection property="formulaBtns" destination="fYr-YH-am3" collectionClass="NSMutableArray" id="1Ff-wx-ppY"/>
+                        <outletCollection property="formulaBtns" destination="9Ln-z0-ewx" collectionClass="NSMutableArray" id="ME3-5z-fmM"/>
+                        <outletCollection property="formulaBtns" destination="2Fg-jb-SMe" collectionClass="NSMutableArray" id="Wox-eq-DyL"/>
+                        <outletCollection property="formulaBtns" destination="EfS-T3-ejh" collectionClass="NSMutableArray" id="kPf-1q-S6d"/>
+                        <outletCollection property="formulaBtns" destination="xs1-q3-siP" collectionClass="NSMutableArray" id="M1c-S4-JUQ"/>
+                        <outletCollection property="formulaBtns" destination="gkl-Db-twi" collectionClass="NSMutableArray" id="cfg-Sn-qcm"/>
+                        <outletCollection property="formulaBtns" destination="t5i-ka-KsS" collectionClass="NSMutableArray" id="FQ8-xi-qK6"/>
+                        <outletCollection property="formulaBtns" destination="WBv-Gm-5w8" collectionClass="NSMutableArray" id="9vG-DK-0x8"/>
+                        <outletCollection property="formulaBtns" destination="rvr-jO-aQ9" collectionClass="NSMutableArray" id="JTt-jG-zEO"/>
+                        <outletCollection property="formulaBtns" destination="9xs-uR-lyM" collectionClass="NSMutableArray" id="emP-6c-3iT"/>
+                        <outletCollection property="formulaBtns" destination="axF-Wh-07f" collectionClass="NSMutableArray" id="7bV-Ag-Sgk"/>
+                        <outletCollection property="formulaBtns" destination="gbQ-4l-CTX" collectionClass="NSMutableArray" id="Uon-dX-bIv"/>
+                        <outletCollection property="formulaBtns" destination="wNd-g1-X0S" collectionClass="NSMutableArray" id="0YV-NT-fL6"/>
+                        <outletCollection property="formulaBtns" destination="lHX-EJ-q26" collectionClass="NSMutableArray" id="D0l-2i-Vsh"/>
+                        <outletCollection property="formulaBtns" destination="fCi-Pg-onm" collectionClass="NSMutableArray" id="8s3-gN-Yi0"/>
+                        <outletCollection property="formulaBtns" destination="hEM-07-uGX" collectionClass="NSMutableArray" id="Avb-my-uyO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.46153846153846" y="2.1327014218009479"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rde-5d-Znv">
+            <objects>
+                <viewController id="6KS-RR-rNR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5PA-T4-9zb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Widget Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrR-eV-1w7">
+                                <rect key="frame" x="72.5" y="120" width="230.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7NQ-uJ-myr">
+                                <rect key="frame" x="97.5" y="206" width="180" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAr-hi-HjV" userLabel="btnLightApp">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="38.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Light App"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDY-H6-IeF" userLabel="btnCalculatorApp">
+                                        <rect key="frame" x="0.0" y="76" width="180" height="38.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Calculator App"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="iDY-H6-IeF" id="TwZ-sJ-xaa">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-oB-mkV" userLabel="btnQuizApp">
+                                        <rect key="frame" x="0.0" y="151.5" width="180" height="38.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Quiz App"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="00c-Re-DX0"/>
+                                    <constraint firstAttribute="width" constant="180" id="zb6-UX-hPX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xIS-bj-IdN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yrR-eV-1w7" firstAttribute="centerX" secondItem="xIS-bj-IdN" secondAttribute="centerX" id="Guy-sb-wgv"/>
+                            <constraint firstItem="yrR-eV-1w7" firstAttribute="top" secondItem="xIS-bj-IdN" secondAttribute="top" constant="100" id="TX7-Gc-6SN"/>
+                            <constraint firstItem="7NQ-uJ-myr" firstAttribute="top" secondItem="yrR-eV-1w7" secondAttribute="bottom" constant="50" id="l8k-VJ-fkg"/>
+                            <constraint firstItem="7NQ-uJ-myr" firstAttribute="centerX" secondItem="xIS-bj-IdN" secondAttribute="centerX" id="pkh-9p-hTi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFL-JF-goC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-860" y="1.4218009478672986"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
